@@ -3,9 +3,9 @@ const Contacts = ({contacts}) => {
     <>
     <h2>Contacts</h2>
     <ul>
-      {contacts.map(({name}) => (
+      {contacts.map(({name, number}) => (
         <li>
-          {name}
+          {name}: {number}
         </li>
       ))}
     </ul>
