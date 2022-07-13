@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Form from './Form';
-import Contacts from './Contacts';
+import ContactList from './ContactList';
 import Filter from './Filter';
 
 class App extends Component {
@@ -34,14 +34,17 @@ class App extends Component {
     );
     console.log(normalizedFilter);
     return (
-      <>
+      <div>
+        <h1>Phonebook</h1>
         <Form submitHandler={this.submitHandler} />
+
+        <h2>Contacts</h2>
         <Filter
           value={contacts.name}
           inputChange={this.hanldeFilterInputChange}
         />
-        <Contacts id={id} contacts={filteredContacts} />
-      </>
+        <ContactList id={id} contacts={filteredContacts} />
+      </div>
     );
   }
 }

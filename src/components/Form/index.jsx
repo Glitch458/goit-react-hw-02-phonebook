@@ -35,7 +35,6 @@ class Form extends Component {
     const { name, number } = this.state;
     return (
       <>
-        <h2>Phonebook</h2>
         <form onSubmit={this.handleFormSubmit}>
           <label>
             Name
