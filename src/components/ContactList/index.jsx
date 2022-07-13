@@ -1,11 +1,16 @@
 import ContactItem from 'components/ContactItem';
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, deleteContact }) => {
   return (
     <>
       <ul>
         {contacts.map(({ id, name, number }) => (
-          <ContactItem key={id} name={name} number={number} />
+          <ContactItem
+            key={id}
+            name={name}
+            number={number}
+            deleteContact={() => deleteContact(id)}
+          />
         ))}
       </ul>
     </>
