@@ -1,5 +1,5 @@
-import { Component } from "react";
-import { nanoid } from "nanoid";
+import { Component } from 'react';
+import { nanoid } from 'nanoid';
 
 const initialState = {
   name: '',
@@ -7,19 +7,18 @@ const initialState = {
 };
 
 class Form extends Component {
-
   state = initialState;
 
-  handleInputChange = (evt) => {
+  handleInputChange = evt => {
     const { name, value } = evt.target;
-    this.setState({ [name]: value })
+    this.setState({ [name]: value });
   };
 
   resetForm = () => {
     this.setState({ ...initialState });
-  }
+  };
 
-  handleFormSubmit = (evt) => {
+  handleFormSubmit = evt => {
     const { name, number } = this.state;
 
     evt.preventDefault();
@@ -65,9 +64,8 @@ class Form extends Component {
           <button type="submit">Add contact</button>
         </form>
       </>
-    )
+    );
   }
-
-};
+}
 
 export default Form;
