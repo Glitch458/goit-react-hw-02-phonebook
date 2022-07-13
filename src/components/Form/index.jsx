@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import styles from './Form.module.css';
 
 const initialState = {
   name: '',
@@ -35,10 +36,11 @@ class Form extends Component {
     const { name, number } = this.state;
     return (
       <>
-        <form onSubmit={this.handleFormSubmit}>
+        <form className={styles.form} onSubmit={this.handleFormSubmit}>
           <label>
             Name
             <input
+              className={styles.input}
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -51,6 +53,7 @@ class Form extends Component {
           <label>
             Number
             <input
+              className={styles.input}
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
