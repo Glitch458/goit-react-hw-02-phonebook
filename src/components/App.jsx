@@ -15,6 +15,15 @@ class App extends Component {
   };
 
   submitHandler = newContact => {
+    const checkNewName = this.state.contacts.find(
+      contact => contact.name === newContact.name
+    );
+
+    if (checkNewName) {
+      alert(newContact.name + ' is already in contacts');
+      return;
+    }
+
     this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact],
     }));
@@ -27,12 +36,11 @@ class App extends Component {
   };
 
   render() {
-    const { id, contacts, filter } = this.state;
+    const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
     const filteredContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
-    console.log(normalizedFilter);
     return (
       <div>
         <h1>Phonebook</h1>
@@ -43,7 +51,7 @@ class App extends Component {
           value={contacts.name}
           inputChange={this.hanldeFilterInputChange}
         />
-        <ContactList id={id} contacts={filteredContacts} />
+        <ContactList contacts={filteredContacts} />
       </div>
     );
   }

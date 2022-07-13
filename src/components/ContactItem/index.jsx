@@ -1,4 +1,4 @@
-const ContactItem = (id, name, number) => {
+const ContactItem = ({ id, name, number }) => {
   return (
     <li key={id}>
       {name}: {number}
