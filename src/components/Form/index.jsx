@@ -72,9 +72,7 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  handleInputChange: PropTypes.func,
-  resetForm: PropTypes.func,
-  handleFormSubmit: PropTypes.func,
+  submitHandler: PropTypes.func.isRequired,
 };
 
 export default Form;

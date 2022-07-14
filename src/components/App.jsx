@@ -16,7 +16,7 @@ class App extends Component {
 
   submitHandler = newContact => {
     const checkNewName = this.state.contacts.find(
-      contact => contact.name === newContact.name
+      contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
     );
 
     if (checkNewName) {
@@ -53,10 +53,7 @@ class App extends Component {
         <Form submitHandler={this.submitHandler} />
 
         <h2>Contacts</h2>
-        <Filter
-          value={contacts.name}
-          inputChange={this.hanldeFilterInputChange}
-        />
+        <Filter value={filter} inputChange={this.hanldeFilterInputChange} />
         <ContactList
           contacts={filteredContacts}
           deleteContact={this.deleteContact}

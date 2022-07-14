@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-const ContactItem = ({ id, name, number, deleteContact }) => {
+const ContactItem = ({ name, number, deleteContact }) => {
   return (
-    <li key={id}>
+    <li>
       {name}: {number}
       <button type="button" onClick={deleteContact}>
         Delete
